@@ -2,16 +2,16 @@ import React, { useState } from "react";
 
 export default function TodoList() {
   const [todos, setTodos] = useState([
-    { id: "123", text: "정리하기", status: "active" },
-    { id: "124", text: "개발하기", status: "active" },
+    { id: "123", text: "개발하기", status: "active" },
+    { id: "124", text: "공부하기", status: "active" },
   ]);
   return (
-    <div>
+    <section>
       <ul>
-        {todos.map((todo) => (
-          <li>todo.text</li>
+        {todos.map((item) => (
+          <li key={item.id}>{item.text}</li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 }
