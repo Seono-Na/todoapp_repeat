@@ -7,6 +7,10 @@ export default function AddTodo({ onAdd }) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (text.trim().length === 0) {
+      setText("");
+      return;
+    }
     onAdd({ id: "origin", text, status: "active" });
     setText("");
   };
@@ -17,6 +21,7 @@ export default function AddTodo({ onAdd }) {
         placeholder="Add Todo"
         value={text}
         onChange={handleChange}
+        autoFocus
       />
       <button>Add</button>
     </form>
