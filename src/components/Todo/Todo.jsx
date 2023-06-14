@@ -1,4 +1,5 @@
 import React from "react";
+import { FaTrashAlt } from "react-icons/fa";
 
 export default function Todo({ todo, onUpdate, onDelete }) {
   const { status, text } = todo;
@@ -16,7 +17,9 @@ export default function Todo({ todo, onUpdate, onDelete }) {
         onChange={handleChange}
       />
       <label htmlFor="checkbox">{text} </label>
-      <button onClick={handleDelete}>button</button>
+      <button onClick={handleDelete}>
+        <FaTrashAlt />
+      </button>
     </li>
   );
 }
